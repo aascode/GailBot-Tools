@@ -1,0 +1,10 @@
+[
+	{
+		"OIRs" : [
+			"pardon", "sorry", "what", "who", "when", "where"
+		],
+		"time_range" : 60,
+		"time_thresh" : 60,
+		"extraction_mode" : "solo"
+	}
+]

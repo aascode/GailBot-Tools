@@ -1,0 +1,101 @@
+Muhammad Umair
+Tufts University
+3/24/2019
+
+Project : CHAT_XML Unidirectional Converter
+Language : Python
+
+
+-- AIM --
+- The aim of this project is to create, at first, a unidirectional converter 
+between the CHAT and XML formats.
+- The XML will be a standard format for all files such that the Human 
+Interaction Lab has a standardized way ton convert Gailbot files to XML.
+
+
+-- Problems and Motivation --
+
+- Currently, TalkBank's 'Chatter' script is available on their website 
+(https://talkbank.org/software/chatter.html).
+
+- The problem is that CHATTER does not work with most CHAT transcripts in the 
+CANBC and HI-LAB Corpus because it performs a strict format check on the 
+transcipts. The problem is that most of these transcripts have extra unicode
+symbol added as part of newer transcription standards (such as CAlite).
+- Thus, Chatter is not able to do any conversion.
+
+
+-- DESIGN --
+
+- The initial aim of this program is to have a standard XML conversion format
+(with standard tags) based on what already exists in CHATTER.
+
+- The XML schema for the CHAT files can be found at:
+      https://talkbank.org/software/xsddoc/
+
+- The original plan was to re-write CHATTER (Talkbank's existing CHAT to XML
+      converter) based on the original schema. However, the new converter would
+      not perform strong contect checking and allow conversion to XML even if 
+      the transcribed utterances did not strictly adhere to the CHAT format.
+      However, it was decided that doing so would create major inconsistencies 
+      between new and old CHAT files and eventually cause format errors.
+
+- Thus, a new plan was adopted to re-use the CHATTER script, allow it to perform
+      strict syntax checking, and produce XML files. However, we decided to 
+      refine the transcripts to minimally remove illegal syntax from the 
+      transcripts before executing CHATTER. 
+      CHATTER's output can then be used to recursively remove parts of the 
+      transcript that remain illegal.
+
+-- TRADEOFFS --
+
+- Major problems include:
+      1. Having no concrete way to indicate where the data wwas deleted in the 
+            XML files.
+      2. Data loss as a result of removing illegal utterances.
+
+- Benifits include:
+      1. Using a standard and existing conversion schema.
+      2. Using an existing converter that conforms to the schema AND performs
+            syntax validation.
+      3. Generating standard XML files.
+
+
+
+-- CHANGELOG --
+
+- No changes to report.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
